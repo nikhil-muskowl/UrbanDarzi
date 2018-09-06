@@ -1,0 +1,72 @@
+<div class="contact-form" data-aos="zoom-in" data-aos-duration="900" data-aos-delay="600" data-aos-anchor-placement="center-bottom"
+  data-aos-easing="linear">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 hidden-xs">
+        <img src="assets/images/Homepage-Asserts/Layer-9.jpg" class="img-responsive">
+        <div class="form-image">
+          <img src="assets/images/Homepage-Asserts/Logo%20On%20Form.png" class="img-responsive">
+          <p>{{heading}}</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div *ngIf="isSuccess">
+          <h2 [innerHTML]="successMessage" style="margin-top:70%;"></h2>
+        </div>
+
+        <div *ngIf="!isSuccess">
+          <h2 class="title">{{title}}</h2>
+          <form (ngSubmit)="onSubmit()" [formGroup]="heroForm" class="form-horizontal">
+
+            <div class="form-group" [class.has-error]="heroForm.controls.name.invalid && submitted">
+              <input type="text" class="form-control" value="" placeholder="Name" formControlName="name">
+              <span *ngIf="heroForm.controls.name.invalid && submitted">
+                {{fieldRequiredError}}
+              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="heroForm.controls.email.invalid && submitted">
+              <input type="text" class="form-control" value="" placeholder="Email" required formControlName="email">
+              <span *ngIf="heroForm.controls.email.invalid && submitted">
+                {{fieldRequiredError}}
+              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="heroForm.controls.contact.invalid && submitted">
+              <input type="text" class="form-control" value="" placeholder="Contact" required formControlName="contact">
+              <span *ngIf="heroForm.controls.contact.hasError('required') && submitted">
+                {{fieldRequiredError}}
+              </span>
+              <span *ngIf="heroForm.controls.contact.hasError('minlength') && submitted">
+                Your contact must be at least 10 characters long.
+              </span>
+              <span *ngIf="heroForm.controls.contact.hasError('maxlength') && submitted">
+                Your contact cannot exceed 12 characters.
+              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="heroForm.controls.contact_type_id.invalid && submitted">
+              <select class="form-control" formControlName="contact_type_id" required>
+                <option *ngFor="let type of types; let i = index" [attr.value]="type.id" [attr.selected]="i==0 ? true : null">{{type.name}}</option>
+              </select>
+              <span *ngIf="heroForm.controls.contact_type_id.invalid && submitted">
+                {{fieldRequiredError}}
+              </span>
+            </div>
+
+            <input type="image" class="form-btn" src="assets\images\Form-Arrow.svg" width="104" height="59">
+
+          </form>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <hr class="form-hr">
+  </div>
+</div>

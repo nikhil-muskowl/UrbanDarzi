@@ -1,0 +1,52 @@
+<div data-aos="zoom-in" data-aos-duration="900" data-aos-delay="600" data-aos-anchor-placement="center-bottom" data-aos-easing="linear">
+    <div class="container" id="bookAppointment">
+        <div class="query-form">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h1>Hi, let's get started?</h1>
+                </div>
+                <div class="panel-body">
+                    <form (ngSubmit)="onSubmit()" [formGroup]="queryForm" class="form-horizontal">
+
+                        <div class="form-group" [class.has-error]="queryForm.controls.name.invalid && submitted">
+                            <input type="text" class="form-control" value="" placeholder="Name" formControlName="name" [(ngModel)]="formData.name">
+                            <span *ngIf="queryForm.controls.name.invalid && submitted">
+                                {{fieldRequiredError}}
+                              </span>
+                        </div>
+
+                        <div class="form-group" [class.has-error]="queryForm.controls.email.invalid && submitted">
+                            <input type="text" class="form-control" value="" placeholder="Email" required formControlName="email" [(ngModel)]="formData.email">
+                            <span *ngIf="queryForm.controls.email.invalid && submitted">
+                                {{fieldRequiredError}}
+                              </span>
+                        </div>
+
+                        <div class="form-group" [class.has-error]="queryForm.controls.contact.invalid && submitted">
+                            <input type="text" class="form-control" value="" placeholder="Contact" required formControlName="contact" [(ngModel)]="formData.contact">
+                            <span *ngIf="queryForm.controls.contact.hasError('required') && submitted">
+                                {{fieldRequiredError}}
+                              </span>
+                            <span *ngIf="queryForm.controls.contact.hasError('minlength') && submitted">
+                                Your contact must be at least 10 characters long.
+                              </span>
+                            <span *ngIf="queryForm.controls.contact.hasError('maxlength') && submitted">
+                                Your contact cannot exceed 12 characters.
+                              </span>
+                        </div>
+
+
+                        <input type="image" class="form-btn" src="assets\images\Next-White.svg" width="104" height="40">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <hr class="form-hr">
+    </div>
+</div>

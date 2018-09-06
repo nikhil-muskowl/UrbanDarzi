@@ -1,0 +1,69 @@
+<app-header></app-header>
+
+<div class="wrapper">
+    <div class="blog-detail smooth">
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div id="blog-detail-left" class="blog-detail-banner" [ngStyle]="{'background-image': 'url(' + records.banner + ')'}">
+
+                    <div *ngIf="!loading">
+                        <!-- <img src="{{records.banner}}" class="img-responsive" id="blog-banner"> -->
+                        <div class="blog-heading" id="heading" style="visibility: hidden;">
+                            <h2 class="text-center">{{records.title}}</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="blog-detail-right">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 blog-detail">
+
+                                <h5 class="text-center fshn-name">{{records.short_description}}</h5>
+
+                                <div *ngIf="!loading">
+
+                                    <div class="cover">
+                                        <h2 class="text-center">{{records.title}}</h2>
+                                        <br>
+                                        <!-- <p class="text-center sub-head">{{records.description}}</p> -->
+                                        <p class="text-center sub-head" [innerHTML]="records.description">                                            
+                                         
+                                        </p>
+                                        <br>
+                                        <div class="text-center">
+                                            <img src="{{records.modified_by_image}}" width="90" height="90">
+                                        </div>
+                                        <h5 class="text-center authr-name" style="color:#ee3925; ">By {{records.modified_by_name}}</h5>
+                                        <p class="text-center" style="color:#d1d1d1; ">{{records.created_date}}</p>
+                                        
+                                        <div class="text-center hidden-xs">
+                                            <a class="scrollDownLink" (click)="onClick()">
+                                                SCROLL DOWN
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="content-element">
+                                        <div #myId [innerHTML]="records.content"></div>
+                                    </div>
+
+                                    <div *ngIf="loading" style="color: #fff;">
+                                        <i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>

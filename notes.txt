@@ -1,0 +1,28 @@
+ng build --prod --base-href http://urbanangular.muskowl.com/
+ng build --prod --base-href https://www.urbandarzi.in/
+on live don't remove admin & cdn folder
+
+
+npm i jquery
+npm i bootstrap
+npm i font-awesome
+npm i ionicons
+npm i ng-snotify
+npm i ngx-spinner
+npm i animate.css
+npm i wowjs
+npm i gsap
+
+npm i aos
+
+npm i ngx-infinite-scroll
+npm i ngx-swiper-wrapper
+npm i swiper
+
+
+
+
+npm update
+npm uninstall -g angular-cli
+npm cache clean --force
+npm install -g @angular/cli

@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="wrapper">
+    <div class="container">
+        <div class="enquiry-confirm text-center">
+            <hr class="enquiry-hr hidden-xs">
+            <form (ngSubmit)="onSubmit()" [formGroup]="enquiryConfirmForm" class="form-horizontal">
+                <h2>Are you interested in buying something else?</h2>
+
+                <label class="radio-inline"><input type="radio" formControlName="enquiry_confirm" value="1">Yes</label>
+                <label class="radio-inline"><input type="radio" formControlName="enquiry_confirm" value="0">No</label>
+
+                <h3 *ngIf="enquiryConfirmForm.controls.enquiry_confirm.invalid && submitted">
+                    {{fieldRequiredError}}
+                </h3>
+                <br>
+
+                <!-- <pre>
+                        {{formData | json}}
+                    </pre> -->
+
+                <div class="btn-group btn-group-lg">
+                    <button type="button" (click)="onSubmit()">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

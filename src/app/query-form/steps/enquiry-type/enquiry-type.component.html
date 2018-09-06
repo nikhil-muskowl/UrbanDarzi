@@ -1,0 +1,86 @@
+<app-header></app-header>
+
+<div class="wrapper">
+
+    <div class="container">
+        <div class="enquiry-type">
+            <hr class="enquiry-hr hidden-xs">
+            <form (ngSubmit)="onSubmit()" [formGroup]="enquiryTypeForm" class="form-horizontal">
+                <h2 class="text-center">What are you looking for today?</h2>
+
+                <div *ngIf="loading" style="color: #333;">
+                    <i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+                </div>
+                <br>
+                <div *ngIf="!loading">
+                    <div class="row" *ngIf="records">
+                        <div class="col-md-6 col-xs-6" *ngFor="let record of records; let i = index;">
+                            <div *ngIf="i % 2 ==0; then left else right"></div>
+
+                            <ng-template #left>
+
+                                <span *ngIf="record.options?.length">
+                                            <label class="label-left">                                                                                                                                               
+                                                <input type="radio" value='{{record.id}}' formControlName="enquiry_type_id" [(ngModel)]="formData.enquiry_type_id">
+                                                <img src="{{record.image}}" class="img-responsive" width="260" height="260">
+                                                <h3>{{record.name}}</h3>
+                                            </label>
+                                        </span>
+
+                                <span *ngIf="!record.options?.length">
+                                                <label class="label-left disable-class">                                                                                                                                               
+                                                    <input type="radio" disabled value='{{record.id}}' formControlName="enquiry_type_id" [(ngModel)]="formData.enquiry_type_id">
+                                                    <img src="{{record.image}}" class="img-responsive" width="260" height="260">
+                                                    <div class="middle">
+                                                        <div class="text">Coming Soon</div>
+                                                      </div>
+                                                    <h3>{{record.name}}</h3>
+                                                </label>
+                                            </span>
+                            </ng-template>
+
+                            <ng-template #right>
+
+                                <span *ngIf="record.options?.length">
+                                    <label class="label-right">                                                                                                                                               
+                                        <input type="radio" value='{{record.id}}' formControlName="enquiry_type_id" [(ngModel)]="formData.enquiry_type_id">
+                                        <img src="{{record.image}}" class="img-responsive" width="260" height="260">
+                                        <h3>{{record.name}}</h3>
+                                    </label>
+                                </span>
+
+                                <span *ngIf="!record.options?.length">
+                                        <label class="label-right disable-class">                                                                                                                                               
+                                            <input type="radio" disabled value='{{record.id}}' formControlName="enquiry_type_id" [(ngModel)]="formData.enquiry_type_id">
+                                            <img src="{{record.image}}" class="img-responsive" width="260" height="260">
+                                            <div class="overlay">
+                                                <div class="middle">
+                                                    <div class="text">Coming Soon</div>
+                                                  </div>
+                                              </div>
+                                            <h3>{{record.name}}</h3>
+                                        </label>
+                                    </span>
+
+                            </ng-template>
+
+                            <br><br>
+
+                        </div>
+                        <div class="text-center">
+                            <h3 *ngIf="enquiryTypeForm.controls.enquiry_type_id.invalid && submitted">
+                                {{fieldRequiredError}}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="btn-group btn-group-lg">
+                    <button type="button" (click)="onSubmit()">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

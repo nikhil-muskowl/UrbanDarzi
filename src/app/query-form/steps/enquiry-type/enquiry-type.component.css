@@ -1,0 +1,127 @@
+.wrapper {
+    margin-top: 0vh;
+}
+.enquiry-type {
+    color: #333;
+    padding: 10px;
+    margin-top: 15%;
+}
+.enquiry-type .enquiry-hr {
+    margin-top: -9vh;
+    border: 0;
+    width: 100%;
+    border-top: 1px solid #e93925!important; 
+}
+
+.enquiry-type h2 {
+    color: #d1d1d1;
+}
+.enquiry-type label {
+    margin-bottom: 5vh;
+}
+.enquiry-type label:hover{
+    box-shadow: #000 0px 0px 25px;
+}
+.enquiry-type .label-left {
+    float: right;
+    text-align: center;
+}
+.enquiry-type .label-right {
+    float: left;
+    text-align: center;
+}
+.disable-class {
+    cursor: pointer;
+}
+.middle {
+    transition: .3s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .disable-class:hover img, .disable-class:focus img {
+    opacity: 0.3;
+  }
+  .disable-class:hover h3, .disable-class:focus h3 {
+    opacity: 0.3;
+  }
+  
+  .disable-class:hover .middle, .disable-class:focus .middle {
+    opacity: 1;
+  }
+
+  
+  .text {
+    color: #e93925;
+    font-size: 40px;
+    padding: 16px 32px;
+  }
+.enquiry-type label>input {
+    /* HIDE RADIO */
+    visibility: hidden;
+    /* Makes input not-clickable */
+    position: absolute;
+    /* Remove input from document flow */
+}
+
+.enquiry-type label>input+img {
+    /* IMAGE STYLES */
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.enquiry-type label>input:checked+img {
+    /* (RADIO CHECKED) IMAGE STYLES */
+    border: 2px solid #ee3925;
+}
+
+.enquiry-type button {
+    position: absolute;
+    border-radius: 0;
+    bottom: 57vh;
+    left: 70vw;
+    border: none;
+    padding: 0px 35px 0px 35px;
+    font-size: 30px;
+    background: #e93925;
+    color: #082340;
+}
+@media (max-width: 900px){
+    .wrapper {
+        margin-top: 15vh;
+    }
+    .enquiry-type button {
+        position: relative;
+        top: 0vh;
+        left: 1vw;
+        padding: 0px 35px 0px 35px;       
+    }
+    .middle {
+        transition: .3s ease;
+        opacity: 0;
+        position: absolute;
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+}
+@media screen and (max-width: 1500px) and (min-width: 1370px)  {
+    .enquiry-type button {
+        position: absolute;
+        border-radius: 0;
+        bottom: 53vh;
+        left: 70vw;
+        border: none;
+        padding: 0px 35px 0px 35px;
+        font-size: 30px;
+        background: #e93925;
+        color: #082340;
+    }
+}

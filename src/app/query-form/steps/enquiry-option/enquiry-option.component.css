@@ -1,0 +1,43 @@
+.enquiry-option .enquiry-hr {
+    margin-top: -15vh;
+    border: 0;
+    width: 100%;
+    border-top: 1px solid #e93925!important; 
+}
+
+.enquiry-option {
+    color: #333;
+    padding: 10px;
+    margin-top: 20%;
+}
+.enquiry-option h2 {
+    color: #d1d1d1;
+}
+.enquiry-option label>input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.enquiry-option label>input+img {
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.enquiry-option label>input:checked+img {
+    border: 2px solid #ee3925;
+}
+.enquiry-option button {
+    border-radius: 0;
+    border: none;
+    padding: 0px 35px 0px 35px;
+    font-size: 30px;
+    background: #e93925;
+    color: #082340;
+    margin-top: 5vh;
+}
+@media (max-width: 900px){
+    .wrapper {
+        margin-top: 15vh;
+    }
+    
+}

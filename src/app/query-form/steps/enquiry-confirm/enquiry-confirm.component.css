@@ -1,0 +1,44 @@
+.enquiry-confirm {
+    background: #082340;
+    color: #d1d1d1;
+    padding: 20px;
+    margin-top: 10%;
+}
+.enquiry-confirm h2 {
+    color: #d1d1d1;
+}
+.enquiry-confirm .enquiry-hr {
+    margin-top: -2vh;
+    border: 0;
+    width: 100%;
+    border-top: 1px solid #e93925!important;
+}
+
+.enquiry-confirm .radio-inline {
+    font-size: 20px;
+    padding-right: 20px;
+}
+.enquiry-confirm .radio-inline input {
+    width: 18px;
+    height: 18px; 
+    margin-left: -2vw;
+}
+.enquiry-confirm button {
+    border-radius: 0;
+    border: none;
+    padding: 0px 35px 0px 35px;
+    font-size: 30px;
+    background: #e93925;
+    color: #082340;
+    margin-top: 5vh;
+}
+@media(max-width:900px){
+    .wrapper{
+        margin-top: 20vh;
+    }
+    .enquiry-confirm .radio-inline input {
+        width: 18px;
+        height: 18px; 
+        margin-left: -7vw;
+    }
+}

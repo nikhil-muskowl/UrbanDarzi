@@ -1,0 +1,42 @@
+.enquiry-success .background{
+    background-image: url('/assets/images/Form-Asserts/bg.jpg');
+    width: 100%;
+    height: 500px;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom:20vh; 
+    margin-top: 25vh;   
+}
+.enquiry-success .panel {
+    position: relative;
+    background: #082340;
+	width: 35%;
+    height: auto;
+    margin-left:15vw;
+    border-radius: 0;
+    top: 10vh;
+    padding-top: 10vh;
+}
+.enquiry-success .panel h3 {
+    color: #d1d1d1;
+}
+
+.enquiry-success-box {
+    background: #082340;
+    color: #fff;
+    padding:20px;
+    text-align: center;
+}
+.enquiry-success .fa-facebook, .fa-instagram {
+    border: 1px solid #d1d1d1!important;
+    color: #d1d1d1;
+}
+@media (max-width:900px) {
+    .enquiry-success .panel { 
+        background: #082340;
+        width: 90%;
+        height: auto;
+        margin-left:5vw;
+    }
+}

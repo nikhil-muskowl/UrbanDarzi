@@ -1,0 +1,89 @@
+
+.blog-heading {
+    position: absolute;
+    bottom: 10%;
+    text-align: center;
+    left: 15%;
+    right: 15%;
+    color: #fff!important;
+    transition: all .5s ease;
+}
+
+.blog-heading i {
+    color: #e93925;
+    margin-left: 10px;
+}
+
+.blog-heading h2 {
+     color: #fff!important;
+}
+.blog-detail-banner {
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+#blog-banner {
+    height: 100vh;
+    width: 672px;
+}
+@media screen and (max-width:900px) {
+    #blog-banner {
+        height: calc(100vh - 10px);
+        width: 672px;
+    }
+    
+}
+.cover {
+    position: relative;
+    height: 80vh;
+}
+@media(max-width:900px){
+    .cover {
+        position: relative;
+        height: 68vh;
+    }
+}
+.content-element {
+    margin-bottom: 30px;
+}
+
+.cover+.content-element {
+    margin-top: 50px;
+}
+
+.scrollDownLink {
+    position: absolute;
+    text-decoration: none;
+    display: block;
+    bottom: 7vh;
+    left: 25%;
+    width: 50%;
+    color: #bcc1c4;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 10px 0px 20px 0px;
+    background: url(/assets/images/icons/arrow-down.png) no-repeat center bottom;
+    background-size: 15px;
+}
+@media screen and (max-width: 1500px) and (min-width: 1370px)   {
+    .scrollDownLink {
+        position: absolute;
+        text-decoration: none;
+        display: block;
+        bottom: 7vh;
+        left: 25%;
+        width: 50%;
+        color: #bcc1c4;
+        text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+        letter-spacing: 3px;
+        font-size: 12px;
+        cursor: pointer;
+        padding: 10px 0px 20px 0px;
+        background: url(/assets/images/icons/arrow-down.png) no-repeat center bottom;
+        background-size: 15px;
+    }
+}

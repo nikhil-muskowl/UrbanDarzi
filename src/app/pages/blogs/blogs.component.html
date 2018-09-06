@@ -1,0 +1,120 @@
+<app-header></app-header>
+
+<div class="wrapper">
+    <div class="blog smooth">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="blog-left">
+
+                    <div class="swiper-container" [swiper]="config">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <img src="assets/images/Blog-Page-Asserts/brooke-cagle-504451-unsplash.jpg" class="img-responsive">
+                                <div class="blog-overlay">
+                                    <a href="https://www.facebook.com/urbandarzi.in/">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/urbandarzi/">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="assets/images/Blog-Page-Asserts/brooke-cagle-504451-unsplash.jpg" class="img-responsive">
+                                <div class="blog-overlay">
+                                    <a href="https://www.facebook.com/urbandarzi.in/">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/urbandarzi/">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/Blog-Page-Asserts/brooke-cagle-504451-unsplash.jpg" class="img-responsive">
+                                <div class="blog-overlay">
+                                    <a href="https://www.facebook.com/urbandarzi.in/">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/urbandarzi/">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-pager">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+                <div id="blog-right">
+                    <div class="container" *ngIf="model">
+
+                        <div *ngFor="let record of model; let i = index;">
+
+                            <div *ngIf="i % 2 ==0; then left else right"></div>
+
+                            <ng-template #left>
+                                <div class="row">
+                                    <div class="col-md-3 col-xs-6">
+                                        <a href="social-edit-detail/{{record.id}}"> <img src="{{record.image}}" class="img-responsive"></a>
+                                    </div>
+                                    <div class="col-md-3 col-xs-6">
+                                        <div class="panel-left">
+                                            <a href="social-edit-detail/{{record.id}}">
+                                                <h3>{{record.name}}</h3>
+                                                <p>{{record.description}}</p>
+                                                <hr align="left">
+                                                <h4>{{record.short_description}}</h4>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+
+                            <ng-template #right>
+                                <div class="row res-padd">
+                                    <div class="col-md-3 col-xs-6">
+                                        <div class="panel-right">
+                                            <div class="panel-right-text">
+                                                <a href="social-edit-detail/{{record.id}}">
+                                                    <h3>{{record.name}}</h3>
+                                                    <p>{{record.description}}</p>
+                                                    <hr align="left">
+                                                    <h4>{{record.short_description}}</h4>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-xs-6">
+                                        <a href="social-edit-detail/{{record.id}}"><img src="{{record.image}}" class="img-responsive"></a>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+
+
+                        <div *ngIf="loading" style="color: #fff;">
+                            <i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+                        </div>
+
+                        <div class="search-results" infiniteScroll [infiniteScrollDistance]="3" [infiniteScrollUpDistance]="3" [infiniteScrollThrottle]="3000" (scrolled)="onScrollDown()" (scrolledUp)="onScrollUp()">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

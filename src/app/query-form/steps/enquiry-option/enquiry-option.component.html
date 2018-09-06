@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="wrapper">
+
+    <div class="container">
+        <div class="enquiry-option">
+            <hr class="enquiry-hr hidden-xs">
+            <form (ngSubmit)="onSubmit()" [formGroup]="enquiryOptionForm" class="form-horizontal">
+                <h2 class="text-center">Give us a taste of your style?</h2>
+                <p class="text-center">Select upto 5 designs that reflect your style</p>
+
+                <div *ngIf="loading" style="color: #333;">
+                    <i class="fa fa-2x fa-circle-o-notch fa-spin"></i>
+                </div>
+
+                <div *ngIf="!loading">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8 text-center">
+                            <div *ngIf="!records">
+                                <div class="text-center">
+                                    <h3>Coming Soon!</h3>
+                                </div>
+                            </div>
+
+                            <div *ngIf="records">
+                                <div class="row">
+                                    <div class="col-md-4 col-xs-4" *ngFor="let record of records; let i = index;">
+                                        <div class="text-center" style="margin-bottom: 12px;">
+                                            <label>
+                                                <input type="checkbox" [value]="record.id" [formControlName]="enquiry_option_id" (change)="onCheckChange($event)" [checked]="check(record.id)">
+                                                <img src="{{record.image}}" class="img-responsive" width="260" height="260">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <h3 *ngIf="!enquiryOptionForm.value.enquiry_option_id?.length && submitted">
+                        {{fieldRequiredError}}
+                    </h3>
+                </div>
+
+                <div class="text-center">
+                    <div class="btn-group btn-group-lg">
+                        <button type="button" (click)="onSubmit()">Next</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
